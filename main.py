@@ -1,44 +1,70 @@
 from math import *
 
-operator = input("Enter the operation: ")
+operators = ["+", "-", "*", "/", "sqrt"]
 variable_type = float
-variables = ["sqrt", "+", "-", "*", "/"]
 
-num1 = ""
-num2 = ""
 
-if operator == variables[0]:
+def add(operator, num1, num2):
+    if operator == operators[0]:
+        return variable_type(num1) + variable_type(num2)
 
-    num1 = input("Enter a value: ")
-    print(sqrt(variable_type(num1)))
 
-elif operator == variables[1]:
+def subtract(operator, num1, num2):
+    if operator == operators[1]:
+        return variable_type(num1) - variable_type(num2)
 
-    num1 = input("Enter your first number: ")
-    num2 = input("Enter your second number: ")
 
-    print(variable_type(num1) + variable_type(num2))
+def multiply(operator, num1, num2):
+    if operator == operators[2]:
+        return variable_type(num1) * variable_type(num2)
 
-elif operator == variables[2]:
 
-    num1 = input("Enter your first number: ")
-    num2 = input("Enter your second number: ")
+def divide(operator, num1, num2):
+    if operator == operators[3]:
+        return variable_type(num1) / variable_type(num2)
 
-    print(variable_type(num1) - variable_type(num2))
 
-elif operator == variables[3]:
+def square_root(operator, num1):
+    if operator == operators[4]:
+        return sqrt(variable_type(num1))
 
-    num1 = input("Enter your first number: ")
-    num2 = input("Enter your second number: ")
 
-    print(variable_type(num1) * variable_type(num2))
+operator_input = input("Enter the operation "
+                       "(ex: +, -, *, /, sqrt): ")
 
-elif operator == variables[4]:
+if operator_input == operators[0]:
 
-    num1 = input("Enter your first number: ")
-    num2 = input("Enter your second number: ")
+    num1_input = input("Enter your first number: ")
+    num2_input = input("Enter your second number: ")
 
-    print(variable_type(num1) / variable_type(num2))
+    print(add(operator_input, num1_input, num2_input))
 
-elif operator != variables:
-    print("Unknown operator, please try again.")
+elif operator_input == operators[1]:
+
+    num1_input = input("Enter your first number: ")
+    num2_input = input("Enter your second number: ")
+
+    print(subtract(operator_input, num1_input, num2_input))
+
+elif operator_input == operators[2]:
+
+    num1_input = input("Enter your first number: ")
+    num2_input = input("Enter your second number: ")
+
+    print(multiply(operator_input, num1_input, num2_input))
+
+elif operator_input == operators[3]:
+
+    num1_input = input("Enter your first number: ")
+    num2_input = input("Enter your second number: ")
+
+    print(divide(operator_input, num1_input, num2_input))
+
+elif operator_input == operators[4]:
+
+    num1_input = input("Enter your number: ")
+
+    print(square_root(operator_input, num1_input))
+
+else:
+    print("Unknown operator.")

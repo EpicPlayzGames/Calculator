@@ -1,5 +1,5 @@
 # Python Calculator
-This is a basic python calculator I made while learning python using if and elif statements for control flow
+This is a basic python calculator I made while learning python using basic control flow
 
 Made within a linux environment. If you wish to use this for whatever reason, this can be downloaded from:
 

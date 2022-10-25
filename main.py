@@ -75,12 +75,11 @@ def run():
 while run_state is True:
     run()
 
-    close = input("Calculate again? (y or n): ")
+    response = input("Calculate again? (y or n): ")
 
-    if close == "y":
+    if response == "y":
         run_state = True
-    elif close == "n":
+    elif response == "n":
         run_state = False
     else:
         print("Unknown Response.")
-

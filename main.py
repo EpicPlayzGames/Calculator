@@ -1,6 +1,6 @@
 from math import *
 
-operators = ["+", "-", "*", "/", "sqrt"]
+operators = ["+", "-", "*", "/", "sqrt", "^"]
 variable_type = float
 run_state = True
 
@@ -30,9 +30,16 @@ def square_root(operator, num1):
         return sqrt(variable_type(num1))
 
 
+def num_to_power(base_num, pow_num):
+    result = 1.0
+    for index in range(pow_num):
+        result = result * base_num
+    return result
+
+
 def run():
     operator_input = input("Enter the operation "
-                           "(ex: +, -, *, /, sqrt): ")
+                           "(ex: +, -, *, /, sqrt, ^): ")
 
     if operator_input == operators[0]:
 
@@ -67,6 +74,13 @@ def run():
         num1_input = input("Enter your number: ")
 
         print(square_root(operator_input, num1_input))
+
+    elif operator_input == operators[5]:
+
+        base_input = int(input("Enter base number: "))
+        pow_input = int(input("Enter power number: "))
+
+        print(num_to_power(base_input, pow_input))
 
     else:
         print("Unknown operator.")
